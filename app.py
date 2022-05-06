@@ -12,7 +12,9 @@ app = Flask(__name__)
 @app.route("/", methods=['POST', 'GET'])
 def hello_world():
     if request.method == 'POST':
-        results = lda_news.cal_doc_keywords_similarity(request.form['content'])
+        data = request.form['content']
+        print(data)
+        results = lda_news.cal_doc_keywords_similarity(data)
         print(results)
         return json.dumps(results) 
     else:
