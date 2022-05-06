@@ -1,3 +1,4 @@
+from base64 import encode
 from flask import Flask
 from flask import request
 
@@ -16,6 +17,6 @@ def hello_world():
         print(data)
         results = lda_news.cal_doc_keywords_similarity(data)
         print(results)
-        return json.dumps(results) 
+        return json.dumps(results, ensure_ascii=False) 
     else:
         return '{"error":-1, "msg":"please input content"}' 
