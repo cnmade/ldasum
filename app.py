@@ -26,6 +26,3 @@ def hello_world():
         return response
     else:
         return '{"error":-1, "msg":"please input content"}' 
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0')
