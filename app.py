@@ -6,7 +6,8 @@ from flask import request
 import paddlehub as hub
 import json
 
-lda_news = hub.Module(name="lda_news")
+lda_webpage = hub.Module(name="lda_webpage")
+
 
 app = Flask(__name__)
 
@@ -15,7 +16,7 @@ def hello_world():
     if request.method == 'POST':
         data = request.form['content']
         print(data)
-        results = lda_news.cal_doc_keywords_similarity(data)
+        results = lda_webpage.cal_doc_keywords_similarity(data)
         print(results)
         response = app.response_class(
             response=json.dumps(results, ensure_ascii=False),
