@@ -20,7 +20,7 @@ flask run
 
 ```bash
 podman build -t cnmade/ldasum .
-podman run -d --name ldasum -p 5000:5000 cnmade/ldasum
+podman run -d --name ldasum -p 127.0.0.1:5000:5000 cnmade/ldasum
 podman logs -f ldasum
 ```
 
